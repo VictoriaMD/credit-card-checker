@@ -51,18 +51,25 @@ const validateCred = arr => {
     let subtotal = arrSum.reduce(reducer);
     
     let isValid = (subtotal) % 10 === 0;
-    console.log(isValid);
     
+    return isValid;
 }
 
 const findInvalidCards = nestedArr => {
+
+    let validCards = [];
     let invalidCards = [];
   for (let i = 0; i < nestedArr.length; i++) {
-      const data = nestedArr[i];
-       let validatedData = validateCred(data);
-      invalidCards.push(validatedData === false); 
-    }
-  console.log(invalidCards);
-};
+          if (!validateCred(nestedArr[i])) {
+             invalidCards.push(nestedArr[i]);
+          } else {
+              validCards.push(nestedArr[i]);
+          }
+     }
+     
+  }
   
-  findInvalidCards(batch);
+  
+  
+  
+ 
