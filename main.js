@@ -69,7 +69,32 @@ const findInvalidCards = nestedArr => {
      
   }
   
+const idInvalidCardCompanies = invalidNums => {
+  let companies = [];
+  let company;
+  for (let i = 0; i < invalidNums.length; i++) {
+    switch (invalidNums[i][0]) {
+    case 3:
+      company = "Amex (American Express)";
+      break;
+    case 4:
+      company = "Visa";
+      break;
+    case 5:
+      company = "Mastercard";
+      break;
+    case 6:
+      company = "Discover";
+      break;
+    default:
+      company = "Company not found";
+    }
+    companies.push(company);
+  }
   
-  
-  
+  console.log(companies);
+
+}
+
+ idInvalidCardCompanies(batch);
  
